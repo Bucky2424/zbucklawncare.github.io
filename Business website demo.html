@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome To ZBuck Lawn Care</title>
+    <style>
+        /* Add your CSS styling here */
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #container2{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        #list {
+            list-style-type: none;
+            padding: 0;
+        }
+        /* Add more styling as needed */
+    </style>
+</head>
+<body>
+    <div id="container2">
+    <ul id="list" >
+
+    </ul>
+    <table id="hidden" style="display:none">
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        <tr>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+            <th>Insert Job, Job Location, and Job Time</th>
+        </tr>
+    </table>
+    </div>
+    <div id="container">
+        <button onClick="ShowDemo()">Demo Of Our Work</button>
+        <div id="demo" style="display:none">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/4PKEeZHt-hY" title="Dewalt 20v Max Hedge Trimmer 22&quot; DCHT820B - Is It Worth Buying?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <h1>Welcome To ZBuck Lawn Care</h1>
+        
+
+        <button onclick="pcheck()">Add</button>
+        <button onClick="Calc()">Our Estimation Calculator</button>
+
+        <p>How long would you say your yard takes to mow with one person? (In Minutes)</p>
+        <input type="number" id="item" placeholder="Enter Estimated Time">
+
+        <p>Is your yard hilly? (1-yes, 2-no)</p>
+        <input type="number" id="hilly" placeholder="Enter 1 for yes, 2 for no">
+
+        <p>How long of a drive is your property? (Minutes)</p>
+        <input type="number" id="dist" placeholder="Enter drive time in minutes">
+
+        <input type="number" id="age" placeholder="How old are you?">
+        <input type="number" id="pass" placeholder="Employee Password">
+
+        <button onclick="addItem()">Add</button>
+
+        <div id="g">
+            <img src="LogoA.jpg" alt="logo" style="position:relative; left:1700px; bottom:20px;" width="200" height="150">
+        </div>
+
+        <div id="gal" style="display:none">
+            <table>
+                <tr>
+                    <th><img src="LeoBeforeLawn.JPG" alt="l" width="200" height="150"></th>
+                    <th><img src="LeoBeforeLawn2.JPG" alt="l" width="200" height="150"></th>
+                </tr>
+                <tr>
+                    <th><img src="LeoAfterLawn.jpeg" alt="log" width="200" height="150"></th>
+                    <th><img src="LeoAfterLawn2.JPG" alt="log" width="200" height="150"></th>
+                </tr>
+            </table>
+        </div>
+
+        <div id="service">
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+            <div id="four"></div>
+        </div>
+
+        <div id="blank">
+            <div id="pr" style="display:none">
+                <table>
+                    <tr>
+                        <th>Mowing</th>
+                        <th>Weed Eating</th>
+                        <th>Mulching</th>
+                    </tr>
+                    <tr>
+                        <td>60$</td>
+                        <td>10$</td>
+                        <td>200$</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="s" style="display:none">
+                <ul>Mowing</ul>
+                <ul>Weed Whacking</ul>
+                <ul>Mulching</ul>
+            </div>
+        </div>
+
+        <div id="body" style="display:block">
+            <button onClick="Services()">Services</button>
+            <button onClick="generateTable()">Pricing Info</button>
+            <button onClick="Contact()">Contact Us</button>
+            <footer id="c" style="display:none">
+                <p>Contact us at (717)917-4036</p>
+            </footer>
+            <div id="t"><button onClick="imag()">Gallery</button></div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var list = document.getElementById("list");
+
+    function Calc(){
+
+        const oof = document.getElementById("body");
+
+        oof.style.display="none";
+
+    }
+
+    function Services(){
+
+        const myT = document.getElementById("s");
+
+        if(myT.style.display=="none"){
+
+            myT.style.display="block";
+
+        } else {
+
+            myT.style.display="none";
+
+        }
+
+        hideG();
+
+        hideC();
+
+        hideI();
+
+        const t = document.getElementById("t");
+
+        t.style.display="block";
+
+    }
+
+    function generateTable() {
+
+        const myTab = document.getElementById("pr");
+
+        if(myTab.style.display=="none"){
+
+            myTab.style.display="block";
+
+        } else {
+
+            myTab.style.display="none";
+
+        }
+
+        const t = document.getElementById("t");
+
+        t.style.display="block";
+
+        hideS();
+
+        hideC();
+
+        hideI();
+
+    }
+
+    function Contact(){
+
+        const show = document.getElementById("c");
+
+        if(show.style.display=="none"){
+
+            show.style.display="block";
+
+        } else {
+
+            show.style.display="none";
+
+        }
+
+        const t = document.getElementById("t");
+
+        t.style.display="block";
+
+        hideS();
+
+        hideG();
+
+        hideI();
+
+    }
+
+    function imag(){
+
+        const imag=document.getElementById("gal");
+
+        if(imag.style.display=="none"){
+
+            imag.style.display="block";
+
+        } else {
+
+            imag.style.display="none";
+
+        }
+
+        const t = document.getElementById("t");
+
+        t.style.display="none";
+
+        hideS();
+
+        hideG();
+
+        hideC();
+
+    }
+
+    function hideS(){
+
+        const myT=document.getElementById("s");
+
+        myT.style.display="none";
+
+    }
+
+    function hideG(){
+
+        const myTab=document.getElementById("pr");
+
+        myTab.style.display="none";
+
+    }
+
+    function hideC(){
+
+        const show = document.getElementById("c");
+
+        show.style.display="none";
+
+    }
+
+    function hideI(){
+
+        const gal = document.getElementById("gal");
+
+        gal.style.display="none";
+
+    }
+
+    function nextQ2(){
+
+        var itemInput = document.getElementById("dist");
+
+        var lister = document.createElement("li");
+
+        if (itemInput.value!="") {
+
+            var itemValue = parseInt(itemInput.value.trim());
+
+            if(itemValue<=20){
+
+                lister.textContent="$0 upcharge for distance";
+
+            }
+
+            else if(itemValue>15 && itemValue<=30){
+
+                lister.textContent="$5 upcharge for distance";
+
+            }
+
+            else if(itemValue>30 && itemValue<=45){
+
+                lister.textContent="$10 upcharge for distance";
+
+            }
+
+            else if(itemValue>45){
+
+                lister.textContent="$25 upcharge for distance";
+
+            }
+
+        }
+
+        list.appendChild(lister);
+
+        itemInput.value="";
+
+    }
+
+    function nextQ(){
+
+        var itemInput = document.getElementById("hilly");
+
+        var listis = document.createElement("li");
+
+        if (itemInput.value!="") {
+
+            var itemValue = parseInt(itemInput.value.trim());
+
+            if (itemValue == 1) {
+
+                if(list.children[0].textContent=="$20 Minimum"){
+
+                    listis.textContent="$2.5 upcharge for hilly terrain";
+
+                }
+
+                if(list.children[0].textContent=="$50 Minimum"){
+
+                    listis.textContent="$5 upcharge for hilly terrain";
+
+                }
+
+                if(list.children[0].textContent=="$75 Minimum"){
+
+                    listis.textContent="$7.5 upcharge for hilly terrain";
+
+                }
+
+                if(list.children[0].textContent=="$100 Minimum"){
+
+                    listis.textContent="$10 upcharge for hilly terrain";
+
+                }
+
+            }
+
+            list.appendChild(listis);
+
+            itemInput.value = "";
+
+        }
+
+    }
+    function hideA(){
+        hideS();
+        hideI();
+        hideG();
+        hideC();
+        const hide = document.getElementById("container");
+        hide.style.display="none";
+        const hi = document.getElementById("hidden");
+        hi.style.display="block";
+        print();
+    }
+    function pcheck(){
+        var ii = document.getElementById("pass");
+        var listItem = document.createElement("li");
+        if( ii.value==109234){
+            hideA();
+
+        }
+
+       
+}
+
+    function addItem() {
+
+        var itemInput = document.getElementById("item");
+
+        var listItem = document.createElement("li");
+
+        if (!isNaN(itemInput.value)) {
+
+            var itemValue = parseInt(itemInput.value.trim());
+
+            if (itemValue <= 30) {
+
+                listItem.textContent = "$20 Minimum";
+
+            } else if (itemValue > 30 && itemValue <= 60) {
+
+                listItem.textContent = "$50 Minimum";
+
+            } else  if (itemValue>60 && itemValue <=120){
+
+                listItem.textContent = "$75 Minimum";
+
+            }else if(itemValue>120){
+
+                listItem.textContent = "$100 Minimum";
+
+            }
+
+            list.appendChild(listItem);
+
+            itemInput.value = "";
+
+        }
+
+        nextQ();
+
+        
+
+        
+        for (var i = list.children.length-1; i < list.children.length; i++) {
+            if(!list.children[i].textContent.includes("NaN")){
+                nextQ2();
+                for (var i = list.children.length-1; i < list.children.length; i++) {
+                    if(!list.children[i].textContent.includes("NaN")){
+                        nextQ3();
+                    }
+                }
+            }
+        }
+        calculateTotal();
+
+    }
+
+  
+    function calculateTotal() {
+        var total = 0;
+        for (var i = list.children.length-3; i < list.children.length; i++) {
+            var text = list.children[i].textContent;
+            var price = parseFloat(text.substring(1));
+            total += price;
+        }
+        var totalItem = document.createElement("li");
+        totalItem.textContent = "Total: $" + total;
+        list.appendChild(totalItem);
+    }
+    function nextQ3() {
+        var ageInput = document.getElementById("age");
+        var age = parseFloat(ageInput.value);
+        if (!isNaN(age) && age >= 65) {
+            for (var i = list.children.length-3; i < list.children.length; i++) {
+                var listItem = list.children[i];
+                var text = listItem.textContent;
+                var price = parseFloat(text.substring(1));
+                var discount = price * 0.15;
+                var discountedPrice = price - discount;
+                listItem.textContent = "$" + discountedPrice.toFixed(4) + " Fifteen% DISCOUNT";
+            }
+        }
+        
+
+    }
+    function ShowDemo(){
+        const demo=document.getElementById("demo");
+        
+
+        if(demo.style.display=="none"){
+
+            demo.style.display="block";
+
+        } else {
+
+            demo.style.display="none";
+
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</Script>
+
+
+
+
+
+
+
+</html>
