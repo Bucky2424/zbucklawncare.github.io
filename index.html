@@ -41,7 +41,7 @@
             <th>Sunday</th>
         </tr>
         <tr>
-            <th>Insert Job, Job Location, and Job Time</th>
+            <th><p id="ins">Insert Job, Job Location, and Job Time</p></th>
             <th>Insert Job, Job Location, and Job Time</th>
             <th>Insert Job, Job Location, and Job Time</th>
             <th>Insert Job, Job Location, and Job Time</th>
@@ -441,7 +441,16 @@
             }
         }
         calculateTotal();
+        updateInstruction();
 
+    }
+    function updateInstruction() {
+        var p = document.getElementById("ins");
+        p.textContent="";
+        for(var i=0; i<list.children.length; i++){
+            p.textContent+=list.children[i].textContent;
+        }
+         // Change this line to your desired instruction content
     }
 
   
